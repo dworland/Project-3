@@ -3,7 +3,8 @@ const path = require("path");
 const bodyParser = require("body-parser");
 const PORT = process.env.PORT || 3001;
 const app = express();
-const apiRoutes = require("./routes/apiRoutes");
+const apiRoutes = require("./routes");
+const mongoose = require("mongoose");
 
 // Serve up static assets
 app.use(express.static("client/build"));
@@ -14,8 +15,21 @@ app.use(bodyParser.urlencoded({ extended: false }));
 // parse application/json
 app.use(bodyParser.json());
 
+// Serve up static assets
+app.use(express.static("client/build"));
+
 // Use apiRoutes
-app.use("/api", apiRoutes);
+app.use(routes);
+
+// Set up promises with mongoose
+mongoose.Promise = global.Promise;
+// Connect to the Mongo DB
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://localhost/reservation-list",
+  {
+    useMongoClient: true
+  }
+);
 
 // Send every request to the React app
 // Define any API routes before this runs

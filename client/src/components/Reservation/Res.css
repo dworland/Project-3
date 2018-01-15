@@ -1,0 +1,20 @@
+.utensils {
+	background-image: url("./Utensils.png");
+	height: 75px;
+}
+
+.name {
+	text-align: center;
+}
+
+.restaurant {
+	text-align: center;
+}
+
+.time {
+	text-align: center;
+}
+
+.seats {
+	text-align: center;
+}

@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./Pages/Home";
+import Reservations from "./Pages/Reservations";
 import Nav from "./components/Nav";
 
 const App = () =>
@@ -8,6 +9,7 @@ const App = () =>
     <div>
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route exact path="/Reservations" component={Reservations} />
       </Switch>
     </div>
   </Router>;
