@@ -29,6 +29,10 @@
 }
 
 .restaurant-name {
-	font-size: 25px;
+	font-size: 22px;
 	margin-top: 51px;
+}
+
+.edit-delete {
+	margin: 5px;
 }

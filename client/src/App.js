@@ -2,7 +2,8 @@ import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./Pages/Home";
 import Reservations from "./Pages/Reservations";
-import Nav from "./components/Nav";
+import Search from "./Pages/Search";
+import SignIn from "./Pages/SignIn";
 
 const App = () =>
   <Router>
@@ -10,6 +11,8 @@ const App = () =>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/Reservations" component={Reservations} />
+        <Route exact path="/Search" component={Search} />
+        <Route exact path="/SignIn" component={SignIn} />
       </Switch>
     </div>
   </Router>;

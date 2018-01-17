@@ -1,0 +1,58 @@
+.cuisines {
+}
+
+.italian {
+	background-image: url("./pizza.png");
+	background-repeat: no-repeat;
+	background-size: 80px;
+	height: 100px;
+}
+
+.seafood {
+	background-image: url("./fish.png");
+	background-repeat: no-repeat;
+	background-size: 80px;
+	height: 100px;
+}
+
+.chinese {
+	background-image: url("./noodles.png");
+	background-repeat: no-repeat;
+	background-size: 80px;
+	height: 100px;
+}
+
+.american {
+	background-image: url("./hamburger.png");
+	background-repeat: no-repeat;
+	background-size: 80px;
+	height: 100px;
+}
+
+.vegetarian {
+	background-image: url("./leaves.png");
+	background-repeat: no-repeat;
+	background-size: 80px;
+	height: 100px;
+}
+
+.sushi {
+	background-image: url("./sushi.png");
+	background-repeat: no-repeat;
+	background-size: 80px;
+	height: 100px;
+}
+
+.mexican {
+	background-image: url("./taco.png");
+	background-repeat: no-repeat;
+	background-size: 80px;
+	height: 100px;
+}
+
+.breakfast {
+	background-image: url("./breakfast.png");
+	background-repeat: no-repeat;
+	background-size: 80px;
+	height: 100px;
+}
