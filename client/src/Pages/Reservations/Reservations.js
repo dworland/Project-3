@@ -13,19 +13,17 @@ class Reservations extends Component {
         <Nav />
         <div className="background">
           <div className="margin">
-            <Container className="container">
-              <div>
-                <Row>
-                  <Col size="xs-12 sm-12 md-12">
-                    <h3 className="page-title">Reservations</h3>
-                    <hr />
-                  </Col>
-                </Row>
-              </div>
-              <div class="table">
-                <Table />
-              </div>
-            </Container>
+            <div className="container table-container">
+              <Row>
+                <h3 className="page-title">Reservations</h3>
+                <hr />
+              </Row>
+              <Row>
+                <div class="table">
+                  <Table />
+                </div>
+              </Row>
+            </div>
           </div>
         </div>
         <Footer />

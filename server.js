@@ -3,8 +3,9 @@ const path = require("path");
 const bodyParser = require("body-parser");
 const PORT = process.env.PORT || 3001;
 const app = express();
-const apiRoutes = require("./routes");
+const routes = require("./routes");
 const mongoose = require("mongoose");
+
 
 // Serve up static assets
 app.use(express.static("client/build"));
@@ -26,6 +27,13 @@ mongoose.Promise = global.Promise;
 // Connect to the Mongo DB
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/reservation-list",
+  {
+    useMongoClient: true
+  }
+);
+
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://localhost/restaurants",
   {
     useMongoClient: true
   }

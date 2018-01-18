@@ -1,7 +1,33 @@
-.mapdiv {
-	height: 400px;
+.map-margin {
+	padding-top: 30px;
 }
 
 .list {
 	height: 400px;
+}
+
+.cuisine-container {
+	background-color: white;
+	margin-bottom: 30px;
+}
+
+.cuisine-icons {
+	padding-top: 30px;
+}
+
+.prompt {
+	font-size: 25px;
+	text-align: center;
+	padding-bottom: 20px;
+	font-weight: bold;
+}
+
+.map {
+	height: 800px;
+}
+
+.main-row {
+	background-color: white;
+	margin-left: 30px;
+	margin-right: 40px;
 }

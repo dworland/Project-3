@@ -2,11 +2,11 @@ import React from "react";
 import "./footer.css";
 
 const Footer = () => (
-<div class="footer">
-  <div class="siteName">
+<div className="footer">
+  <div className="siteName">
   	<p>Bites ATX</p>
   </div>
-  <div class="links">
+  <div className="links">
   	<ul>
   		<li>Link</li>
   		<li>Link</li>

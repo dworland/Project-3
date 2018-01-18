@@ -5,7 +5,7 @@ import MapContainer from "../../components/MapContainer";
 import Footer from "../../components/Footer";
 import Table from "../../components/Table";
 import API from "../../utils/API";
-import { Container, Row, Col } from "../../components/Grid";
+import { List, ListItem } from "../../components/List";
 import "./Search.css";
 
 class Search extends Component {
@@ -13,20 +13,27 @@ class Search extends Component {
     return (
       <div>
         <Nav />
-        <Row>
-          <Col size="sm-12 md-12">
-            <Cuisines />
-          </Col>
-        </Row>
-        <Row>
-          <Col size="sm-3 md-3">
-            <div className="list"><p>List Here</p></div>
-          </Col>
-          <Col size="sm-9 md-9">
-            <div id="map" className="mapdiv"></div>
-          </Col>
-        </Row>
-        <Footer />
+        <div className="background">
+          <div className="map-margin">
+            <div className="container cuisine-container">
+              <div className="row cuisine-icons">
+                <div className="prompt">
+                  <p>Choose a cuisine</p>
+                </div>
+                <Cuisines />
+              </div>
+            </div>
+            <div className="row main-row">
+              <div className="col-sm-3 list">
+                <List />
+              </div>
+              <div className="col-sm-9 map">
+              <MapContainer />
+              </div>
+            </div>
+          </div>
+        </div>
+        <Footer/>
       </div>
     );
   }

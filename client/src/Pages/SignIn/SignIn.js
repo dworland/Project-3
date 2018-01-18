@@ -13,7 +13,7 @@ class SignIn extends Component {
         <Nav />
           <div className="main-background">
           <div className="box">
-            <Container className="container">
+            <div className="container sign-in-container">
               <Row>
                 <Col size="sm-12 md-12">
                   <div className="utensils"></div>
@@ -26,7 +26,7 @@ class SignIn extends Component {
                   </Col>
                 </div>
               </Row>
-            </Container>
+            </div>
           </div>
           </div>
         <Footer />
