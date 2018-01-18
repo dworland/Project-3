@@ -1,0 +1,25 @@
+.main-background {
+	background-color: #efefef;
+}
+
+.box {
+	padding-top: 30px;
+	padding-bottom: 100px;
+}
+
+.container {
+	height: 400px;
+	padding-top: 30px;
+}
+
+.utensils {
+	background-image: url("./Utensils.png");
+	background-repeat: no-repeat;
+	height: 100px;
+	background-position: center;
+}
+
+.form {
+	padding-bottom: 50px;
+}
+
