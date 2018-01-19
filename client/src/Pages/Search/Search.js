@@ -9,6 +9,29 @@ import { List, ListItem } from "../../components/List";
 import "./Search.css";
 
 class Search extends Component {
+
+  state = {
+    restaurants: [],
+    cuisine: "",
+    address: "",
+    phone: "",
+    rating: "",
+    price: ""
+  };
+
+  componentDidMount() {
+    this.loadRestaurants();
+  };
+
+  loadRestaurants = () => {
+    API.getRestaurants()
+      .then(res =>
+        this.setState({ restaurants: res.data, cuisine: "", address: "", phone: "", rating: "", price: "" })
+      )
+      .catch(err => console.log(err));
+  };
+
+
   render() {
     return (
       <div>

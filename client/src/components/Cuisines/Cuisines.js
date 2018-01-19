@@ -17,7 +17,7 @@ class Cuisines extends React.Component {
 		return (
 			<Row>
 				<div class="col-sm-1 col-sm-offset-1">
-					<div onClick={this.cusineSearch} className="italian" name="italian"></div>
+					<div onClick={this.handleClick} className="italian" name="italian"></div>
 				</div>
 				<div class="col-sm-1">
 					<div className="seafood"></div>
