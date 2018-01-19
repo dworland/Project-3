@@ -10,14 +10,15 @@ import "./Search.css";
 
 class Search extends Component {
 
-  // state = {
-  //   restaurants: [],
-  //   cuisine: "",
-  //   address: "",
-  //   phone: "",
-  //   rating: "",
-  //   price: ""
-  // };
+  state = {
+    restaurants: [],
+    name: "",
+    cuisine: "",
+    address: "",
+    phone: "",
+    rating: "",
+    price: ""
+  };
 
   // handleClick() {
   //   componentDidMount();
@@ -52,7 +53,21 @@ class Search extends Component {
             </div>
             <div className="row main-row">
               <div className="col-sm-3 list">
-                <List />
+                {this.state.restaurants.length ? (
+                  <List>
+                    {this.state.restaurants.map(restaurant => {
+                      return (
+                        <ListItem key={restaurant._id}>
+                          <a href={"/restaurants/" + restaurant._id}>
+                            <strong>
+                             {restaurant.name} {restaurant.cuisine} {restaurant.address} {restaurant.phone} {restaurant.rating} {restaurant.price}
+                            </strong>
+                          </a>
+                        </ListItem>
+                      );
+                    })}
+                  </List>
+                )}
               </div>
               <div className="col-sm-9 map">
               <MapContainer />

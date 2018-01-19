@@ -13,7 +13,7 @@ mongoose.connect(
 
 const restaurantSeed = [
   {
-    restaurant: "Old Thousand",
+    name: "Old Thousand",
     cuisine: "Chinese",
     address: "1000 E 11th St, Austin, TX 78702",
     phone: "(737) 222-6637",
@@ -21,7 +21,7 @@ const restaurantSeed = [
     price: "$$", 
   },
   {
-    restaurant: "Jade Restaurant",
+    name: "Jade Restaurant",
     cuisine: "Chinese",
     address: "3801 N Capital Of Texas Hwy, Austin, TX 78746",
     phone: "(512) 956-8816",
@@ -29,7 +29,7 @@ const restaurantSeed = [
     price: "$$",
   },
   {
-    restaurant: "Nanking Restaurant",
+    name: "Nanking Restaurant",
     cuisine: "Chinese",
     address: "13450 N Hwy 183, Austin, TX 78750",
     phone: "(512) 331-1858",
@@ -37,7 +37,7 @@ const restaurantSeed = [
     price: "$",
   },
   {
-    restaurant: "Red Lotus Asian Grille",
+    name: "Red Lotus Asian Grille",
     cuisine: "Chinese",
     address: "6507 Jester Blvd, Austin, TX 78750",
     phone: "(512) 494-4994",
@@ -45,7 +45,7 @@ const restaurantSeed = [
     price: "$$",
   },
   {
-    restaurant: "Hunan Bistro",
+    name: "Hunan Bistro",
     cuisine: "Chinese",
     address: "10700 Anderson Mill Rd, Austin, TX 78750",
     phone: "(512) 579-0108",
@@ -53,7 +53,7 @@ const restaurantSeed = [
     price: "$$",
   },
   {
-    restaurant: "Me Con Bistro",
+    name: "Me Con Bistro",
     cuisine: "Chinese",
     address: "3421 W William Cannon Dr, Austin, TX 78745",
     phone: "(512) 899-2390",
@@ -61,7 +61,7 @@ const restaurantSeed = [
     price: "$$",
   },
   {
-    restaurant: "China Cafe by Phoenix",
+    name: "China Cafe by Phoenix",
     cuisine: "Chinese",
     address: "3901 Spicewood Springs, Austin, TX 78759",
     phone: "(512) 345-1938",
@@ -69,7 +69,7 @@ const restaurantSeed = [
     price: "$",
   },
   {
-    restaurant: "Ho Ho Chinese BBQ",
+    name: "Ho Ho Chinese BBQ",
     cuisine: "Chinese",
     address: "13000 N Ih-35, Austin, TX 78753",
     phone: "(512) 339-9088",
@@ -77,7 +77,7 @@ const restaurantSeed = [
     price: "$$",
   },
   {
-    restaurant: "First Chinese Barbecue",
+    name: "First Chinese Barbecue",
     cuisine: "Chinese",
     address: "10901 N Lamar Blvd, Austin, TX 78753",
     phone: "(512) 835-8889",
@@ -85,7 +85,7 @@ const restaurantSeed = [
     price: "$",
   },
   {
-    restaurant: "New Fortune",
+    name: "New Fortune",
     cuisine: "Chinese",
     address: "10901 N Lamar Blvd, Austin, TX 78753",
     phone: "(512) 832-9992",

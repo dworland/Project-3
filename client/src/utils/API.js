@@ -2,8 +2,8 @@ import axios from "axios";
 
 export default {
   // Gets all books
-  getBooks: function() {
-    return axios.get("/api/reservations");
+  getRestaurants: function() {
+    return axios.get("/api/restaurants");
   }
   // Gets the book with the given id
   // getBook: function(id) {

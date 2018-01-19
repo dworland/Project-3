@@ -1,7 +1,6 @@
 const router = require("express").Router();
-// const cuisineRoutes = require("./cuisines");
+const restaurantRoutes = require("./restaurants");
 
-
-// router.use("/cuisines", cuisineRoutes);
+router.use("/restaurants", restaurantRoutes);
 
 module.exports = router;
