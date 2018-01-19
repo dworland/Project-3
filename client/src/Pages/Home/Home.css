@@ -1,3 +1,12 @@
 .background {
 	background-color: #efefef;
 }
+
+.home-container {
+	background-color: white;
+}
+
+.home-margin {
+	padding-bottom: 50px;
+	padding-top: 30px;
+}

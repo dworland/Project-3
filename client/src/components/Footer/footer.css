@@ -1,9 +1,45 @@
-.footer {
-   height: 100px;
+.page-footer {
    background-color: #39bfa2;
-   color: white;
 }
 
-.siteName {
+.footer-title {
 	text-align: center;
+	font-size: 28px;
+	color: white;
+	padding-top: 10px;
+}
+
+.footer-copyright {
+	background-color: #31a58c;
+	height: 40px;
+}
+
+.copyright {
+	text-align: center;
+	color: white;
+	padding-top: 8px;
+}
+
+.footer-links {
+	text-align: center;
+	padding-bottom: 20px;
+}
+
+.footer-link {
+	display: inline;
+}
+
+.link {
+	color: white;
+	margin: 20px;
+	font-size: 16px;
+}
+
+.city-scape {
+	background-image: url("./cityscape.png");
+	background-repeat: no-repeat;
+	height: 90px;
+	background-position: center;
+	margin-bottom: 15px;
+	margin-top: 50px;
 }

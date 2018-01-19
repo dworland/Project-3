@@ -7,15 +7,16 @@
 }
 
 .date-section {
-	border-bottom: 1px solid black;
+	border-bottom: 1px solid #929293;
 }
 
 .res-list {
-	border: 1px solid black;
+	border: 1px solid #929293;
+	border-radius: 3px;
 }
 
 .ticket {
-	background-image: url("./Ticket.png");
+	background-image: url("./reservation.png");
 	background-size: 50px;
 	color: #dc0000;
 	background-repeat: no-repeat;
@@ -33,6 +34,18 @@
 	margin-top: 51px;
 }
 
-.edit-delete {
-	margin: 5px;
+.edit {
+	background-image: url("./pencil.png");
+	background-repeat: no-repeat;
+	background-size: 28px;
+	height: 40px;
+	background-position: center;
+	margin-top: 25px;
+}
+
+.delete {
+	background-image: url("./recycle-bin.png");
+	background-repeat: no-repeat;
+	background-position: center;
+	height: 40px;
 }

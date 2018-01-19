@@ -10,26 +10,30 @@ import "./Search.css";
 
 class Search extends Component {
 
-  state = {
-    restaurants: [],
-    cuisine: "",
-    address: "",
-    phone: "",
-    rating: "",
-    price: ""
-  };
+  // state = {
+  //   restaurants: [],
+  //   cuisine: "",
+  //   address: "",
+  //   phone: "",
+  //   rating: "",
+  //   price: ""
+  // };
 
-  componentDidMount() {
-    this.loadRestaurants();
-  };
+  // handleClick() {
+  //   componentDidMount();
+  // };
 
-  loadRestaurants = () => {
-    API.getRestaurants()
-      .then(res =>
-        this.setState({ restaurants: res.data, cuisine: "", address: "", phone: "", rating: "", price: "" })
-      )
-      .catch(err => console.log(err));
-  };
+  // componentDidMount() {
+  //   this.loadRestaurants();
+  // };
+
+  // loadRestaurants = () => {
+  //   API.getRestaurants()
+  //     .then(res =>
+  //       this.setState({ restaurants: res.data, cuisine: "", address: "", phone: "", rating: "", price: "" })
+  //     )
+  //     .catch(err => console.log(err));
+  // };
 
 
   render() {

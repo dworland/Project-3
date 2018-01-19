@@ -14,18 +14,14 @@ class SignIn extends Component {
           <div className="main-background">
           <div className="box">
             <div className="container sign-in-container">
-              <Row>
-                <Col size="sm-12 md-12">
-                  <div className="utensils"></div>
-                </Col>
-              </Row>
-              <Row>
-                <div className="form">
-                  <Col size="sm-8 md-8">
+              <div className="row">
+                <div className="utensils"></div>
+              </div>
+              <div className="row">
+                <div className="sign-in-form col-sm-6 col-sm-offset-3">
                     <Form />
-                  </Col>
                 </div>
-              </Row>
+              </div>
             </div>
           </div>
           </div>

@@ -15,18 +15,16 @@ class Home extends Component {
         <Nav />
         <Jumbotron />
         <div className="background">
-          <Container>
+          <div className="home-margin">
+          <div class="container home-container">
             <Row>
-              <Col size="xs-12 sm-12 md-12">
                 <Body />
-              </Col>
             </Row>
             <Row>
-              <Col size="xs-12 sm-12 md-12">
                 <Button />
-              </Col>
             </Row>
-          </Container>
+          </div>
+          </div>
         </div>
         <Footer />
       </div>

@@ -9,11 +9,19 @@
 	height: 100px;
 }
 
+.italian:hover {
+	border-top: 3px solid red;
+}
+
 .seafood {
 	background-image: url("./fish.png");
 	background-repeat: no-repeat;
 	background-size: 65px;
 	height: 100px;
+}
+
+.seafood:hover {
+	border-top: 3px solid red;
 }
 
 .chinese {
@@ -23,11 +31,19 @@
 	height: 100px;
 }
 
+.chinese:hover {
+	border-top: 3px solid red;
+}
+
 .american {
 	background-image: url("./hamburger.png");
 	background-repeat: no-repeat;
 	background-size: 65px;
 	height: 100px;
+}
+
+.american:hover {
+	border-top: 3px solid red;
 }
 
 .vegetarian {
@@ -37,11 +53,19 @@
 	height: 100px;
 }
 
+.vegetarian:hover {
+	border-top: 3px solid red;
+}
+
 .sushi {
 	background-image: url("./sushi.png");
 	background-repeat: no-repeat;
 	background-size: 65px;
 	height: 100px;
+}
+
+.sushi:hover {
+	border-top: 3px solid red;
 }
 
 .mexican {
@@ -51,11 +75,19 @@
 	height: 100px;
 }
 
+.mexican:hover {
+	border-top: 3px solid red;
+}
+
 .breakfast {
 	background-image: url("./breakfast.png");
 	background-repeat: no-repeat;
 	background-size: 65px;
 	height: 100px;
+}
+
+.breakfast:hover {
+	border-top: 3px solid red;
 }
 
 .noodles {
@@ -65,9 +97,19 @@
 	height: 100px;
 }
 
+.noodles:hover {
+	border-top: 3px solid red;
+}
+
 .indian {
 	background-image: url("./taj-mahal.png");
 	background-repeat: no-repeat;
 	background-size: 65px;
 	height: 100px;
 }
+
+.indian:hover {
+	border-top: 3px solid red;
+}
+
+

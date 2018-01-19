@@ -2,19 +2,24 @@ import React from "react";
 import "./footer.css";
 
 const Footer = () => (
-<div className="footer">
-  <div className="siteName">
-  	<p>Bites ATX</p>
-  </div>
-  <div className="links">
-  	<ul>
-  		<li>Link</li>
-  		<li>Link</li>
-  		<li>Link</li>
-  		<li>Link</li>
-  	</ul>
-  </div>
-</div>
+  <footer className="page-footer">
+    <div className="container footer-container">
+      <div className="row">
+        <h5 className="black-text footer-title">Bites ATX</h5>
+        <div className="social-links">
+          <img className="social" src="" />
+          <img className="social" src="" />
+          <img className="social" src="" />
+          <img className="social" src="" />
+        </div>
+      </div>
+      <div className="city-scape"></div>
+    </div>
+    <div class="footer-copyright">
+      <div class="black-text copyright">© 2017 Copyright Judson Fisher and Devon Worland</div>
+    </div>
+  </footer>
 );
 
 export default Footer;
+

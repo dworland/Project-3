@@ -1,18 +1,23 @@
 .jumbotron {
 	background-color: #efefef;
 	background-image: url("./mixed-appetizers.jpg");
-  	height: 800px;
+  	height: 850px;
   	padding-top: 75px;
+  	margin-bottom: 0px;
 }
 
-h1 {
+.jumbo-btn {
+	background-color: #DC0000;
+}
+
+.jumbo-header {
 	color: white !important;
-	text-shadow: 0 0 5px #FF0000;
+	text-shadow: 0 0 15px #DC0000;
 	padding-top: 120px;
 }
 
 button {
-	background-color: red;
+	background-color: #DC0000;
 	color: white;
 	font-size: 25px !important;
 	width: 250px;

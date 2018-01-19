@@ -4,9 +4,9 @@ import "./Jumbotron.css";
 
 const Jumbotron = () => (
   <div className="jumbotron text-center">
-    <h1>Bites ATX</h1>
+    <h1 className="jumbo-header">Bites ATX</h1>
     <Link to="/SignIn">
-    	<button type="button" class="btn">Get Started</button>
+    	<button type="button" className="jumbo-btn btn">Get Started</button>
     </Link>
   </div>
 );
