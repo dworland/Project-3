@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Nav from "../../components/Nav";
-import Form from "../../components/Form";
+import SignInForm from "../../components/SignInForm";
 import Footer from "../../components/Footer";
 import API from "../../utils/API";
 import { Container, Row, Col } from "../../components/Grid";
@@ -19,7 +19,7 @@ class SignIn extends Component {
               </div>
               <div className="row">
                 <div className="sign-in-form col-sm-6 col-sm-offset-3">
-                    <Form />
+                    <SignInForm />
                 </div>
               </div>
             </div>

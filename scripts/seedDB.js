@@ -1,8 +1,6 @@
 const mongoose = require("mongoose");
-const db = require("../models");
+const db = require("../models/Restaurants");
 mongoose.Promise = global.Promise;
-
-// This file empties the Books collection and inserts the books below
 
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/restaurants",
@@ -91,10 +89,18 @@ const restaurantSeed = [
     phone: "(512) 832-9992",
     rating: 4,
     price: "2",
-  },
+  }
+  {
+    name: "New Fortune",
+    cuisine: "Italian",
+    address: "10901 N Lamar Blvd, Austin, TX 78753",
+    phone: "(512) 832-9992",
+    rating: 4,
+    price: "2",
+  }
 ];
 
-db.Restaruants
+db.Restaurants
   .remove({})
   .then(() => db.Restaurants.collection.insertMany(restaurantSeed))
   .then(data => {
@@ -102,6 +108,8 @@ db.Restaruants
     process.exit(0);
   })
   .catch(err => {
-    console.error(err);
+    console.log(err);
     process.exit(1);
   });
+
+

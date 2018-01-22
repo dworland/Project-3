@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export default {
-  // Gets all books
+
   getRestaurants: function() {
     return axios.get("/api/restaurants");
   }

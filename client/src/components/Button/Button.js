@@ -5,7 +5,7 @@ import "./button.css";
 const Button = () => (
 <div className="getStarted">
 	<Link to="/SignIn">
-  	<button type="button" class="btn">Get Started!</button>
+  	<button type="button" class="btn get-started-btn">Get Started!</button>
   </Link>
 </div>
 );

@@ -4,6 +4,7 @@ import Home from "./Pages/Home";
 import Reservations from "./Pages/Reservations";
 import Search from "./Pages/Search";
 import SignIn from "./Pages/SignIn";
+import SignUp from "./Pages/SignUp";
 
 const App = () =>
   <Router>
@@ -13,6 +14,7 @@ const App = () =>
         <Route exact path="/Reservations" component={Reservations} />
         <Route exact path="/Search" component={Search} />
         <Route exact path="/SignIn" component={SignIn} />
+        <Route exact path="/SignUp" component={SignUp} />
       </Switch>
     </div>
   </Router>;

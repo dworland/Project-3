@@ -8,17 +8,13 @@
 
 .jumbo-btn {
 	background-color: #DC0000;
+	color: white;
+	font-size: 25px !important;
+	width: 250px;
 }
 
 .jumbo-header {
 	color: white !important;
 	text-shadow: 0 0 15px #DC0000;
 	padding-top: 120px;
-}
-
-button {
-	background-color: #DC0000;
-	color: white;
-	font-size: 25px !important;
-	width: 250px;
 }

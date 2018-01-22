@@ -1,4 +1,4 @@
-const db = require("../models");
+const db = require("../models/Restaurants");
 
 module.exports = {
   findAll: function(req, res) {
@@ -7,9 +7,10 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  //   findByCuisine: function(req, res) {
+  // findByCuisine: function(req, res) {
+  //   var cuisineID = req.param.cuisine;
   //   db.Book
-  //     .findByCuisine(req.params.cuisine)
+  //     .findByCuisine({cuisineID: })
   //     .then(dbModel => res.json(dbModel))
   //     .catch(err => res.status(422).json(err));
   // }
