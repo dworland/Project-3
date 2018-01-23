@@ -1,3 +1,21 @@
-.modal {
-	height: 400px;
+.Modal-modal {
+	position: fixed;
+    top: 400px;
+    left: 500px;
+    width: 63%;
+    height: 45%;
+    background: white;
+    opacity: 1;
+    z-index: 999;
+    border: 2px solid #929293;
+}
+
+.modal-close-button {
+	text-align: center;
+	height: 20px;
+}
+
+.close-btn {
+	background-color: #dc0000;
+	 color: white;
 }

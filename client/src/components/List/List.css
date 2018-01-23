@@ -2,3 +2,7 @@
 	background-image: url(."/reservation.png");
 	background-repeat: no-repeat;
 }
+
+.list-group {
+	list-style: none;
+}

@@ -1,3 +1,11 @@
+.hidePlease {
+	visibility: hidden;
+}
+.showPlease {
+	visibility: visible;
+
+}
+
 .map-margin {
 	padding-top: 30px;
 	padding-bottom: 50px;
@@ -37,10 +45,6 @@
 	color: #707070;
 	text-align: center;
 	font-size: 20px;
-}
-
-.cuisines {
-
 }
 
 .italian {
@@ -169,6 +173,26 @@
 
 .phone {
 	margin-left: 1px;
+}
+
+.btn-res {
+	 background-color: #dc0000;
+	 color: white;
+}
+
+.res-button {
+	text-align: center;
+}
+
+.modal-restaurant-name {
+	text-align: center;
+	margin-bottom: 25px;
+	font-size: 25px;
+}
+
+.make-res-button {
+	background-color: #dc0000;
+	 color: white;
 }
 
 

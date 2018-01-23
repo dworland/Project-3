@@ -12,6 +12,7 @@ class Search extends Component {
   constructor(props) {
     super(props);
     this.handleClick = this.handleClick.bind(this);
+    this.toggleModal = this.toggleModal.bind(this);
   }
 
   state = {
@@ -22,11 +23,19 @@ class Search extends Component {
     phone: "",
     rating: "",
     price: "",
-    isOpen: false
+    isOpen: false,
+    selectedRestaraunt: {},
   };
 
-  handleClick() {
-    this.loadRestaurants();
+  handleClick(event) {
+    const target = event.currentTarget;
+    const cuisine = target.getAttribute('data-cuisine');
+
+    API.getRestaurantsByCuisine(cuisine)
+      .then((res) => {
+        console.log(res.data)
+        this.setState({ restaurants: res.data, name: "", address: "", phone: "", rating: "", price: "" })
+      })
   }
 
   loadRestaurants = () => {
@@ -38,10 +47,45 @@ class Search extends Component {
       .catch(err => console.log(err));
   };
 
-  toggleModal = () => {
+  toggleModal(restaurant) {
     this.setState({
-      isOpen: !this.state.isOpen
+      isOpen: !this.state.isOpen,
+      selectedRestaraunt: restaurant
     });
+  };
+
+  handleInput = (event) => {
+    const target = event.currentTarget;
+
+    this.setState({
+      [target.name]: target.value
+    });
+  };
+
+  handleFormSubmit = event => {
+    event.preventDefault();
+    if (this.state.formDate && this.state.formTime && this.state.formSeats) {
+      API.saveReservation({
+        date: this.state.formDate,
+        name: this.state.selectedRestaraunt.name,
+        time: this.state.formTime,
+        seats: this.state.formSeats
+      })
+        .catch(err => console.log(err));
+    }
+  };
+
+  handleFormUpdate = event => {
+    event.preventDefault();
+    if (this.state.formDate && this.state.formTime && this.state.formSeats) {
+      API.saveReservation({
+        date: this.state.formDate,
+        name: this.state.selectedRestaraunt.name,
+        time: this.state.formTime,
+        seats: this.state.formSeats
+      })
+        .catch(err => console.log(err));
+    }
   };
 
 
@@ -60,34 +104,34 @@ class Search extends Component {
 
                   <div className="row">
                     <div class="col-sm-1 col-sm-offset-1">
-                      <div onClick={ this.handleClick } className="italian" id="italian"></div>
+                      <div onClick={ this.handleClick } className="italian" data-cuisine="italian"></div>
                     </div>
                     <div class="col-sm-1">
-                      <div onClick={ this.handleClick } className="seafood" id="seafood"></div>
+                      <div onClick={ this.handleClick } className="seafood" data-cuisine="seafood"></div>
                     </div>
                     <div class="col-sm-1">
-                      <div onClick={ this.handleClick } className="chinese"></div>
+                      <div onClick={ this.handleClick } className="chinese" data-cuisine="chinese"></div>
                     </div>
                     <div class="col-sm-1">
-                      <div onClick={ this.handleClick } className="american"></div>
+                      <div onClick={ this.handleClick } className="american" data-cuisine="american"></div>
                     </div>
                     <div class="col-sm-1">
-                      <div onClick={ this.handleClick } className="sushi"></div>
+                      <div onClick={ this.handleClick } className="sushi" data-cuisine="sushi"></div>
                     </div>
                     <div class="col-sm-1">
-                      <div onClick={ this.handleClick } className="mexican"></div>
+                      <div onClick={ this.handleClick } className="mexican" data-cuisine="mexican"></div>
                     </div>
                     <div class="col-sm-1">
-                      <div onClick={ this.handleClick } className="noodles"></div>
+                      <div onClick={ this.handleClick } className="noodles" data-cuisine="noodles"></div>
                     </div>
                     <div class="col-sm-1">
-                      <div onClick={ this.handleClick } className="vegetarian"></div>
+                      <div onClick={ this.handleClick } className="vegetarian" data-cuisine="vegan"></div>
                     </div>
                     <div class="col-sm-1">
-                      <div onClick={ this.handleClick } className="indian"></div>
+                      <div onClick={ this.handleClick } className="indian" data-cuisine="indian"></div>
                     </div>
                     <div class="col-sm-1">
-                      <div onClick={ this.handleClick } className="breakfast"></div>
+                      <div onClick={ this.handleClick } className="breakfast" data-cuisine="breakfast"></div>
                     </div>
                   </div>
 
@@ -100,12 +144,13 @@ class Search extends Component {
                   <List>
                     {this.state.restaurants.map(restaurant => {
                       return (
-                        <ListItem key={restaurant._id} onClick={this.toggleModal} className="list-item">
+                        <ListItem key={restaurant._id} onClick={() => this.toggleModal(restaurant)} className="list-item">
                           {this.props.children}
                             <div className="row restaurantName">
                               <strong>{restaurant.name}</strong>
                             </div>
-                            <div className="row address">{restaurant.address}</div>
+                            <button onClick={() => this.toggleModal(restaurant)} className="make-res-button">Make Reservation</button>
+                            <div className="row address" data-address={restaurant.address}>{restaurant.address}</div>
                             <div className="row phone">{restaurant.phone}</div>
                             <div className="row">
                               <div className="col-sm-4 col-sm-offset-4">{ "rating: " + restaurant.rating}</div>
@@ -119,19 +164,25 @@ class Search extends Component {
                   <h3 className="no-results">No Results to Display</h3>
                 )}
 
-                <Modal show={this.state.isOpen} onClose={this.toggleModal}>
-                  <div className="row">Restaurant Name</div>
+                <Modal show={this.state.isOpen} className={this.state.isOpen ? "showPlease" : "hidePlease"} onClose={this.toggleModal}>
+                  <div className="row modal-restaurant-name">{this.state.selectedRestaraunt.name}</div>
                   <div className="row">
-                    <div className="form-group">
+                    <div className="form-group col-sm-2 col-sm-offset-5">
+                      <label htmlFor="date">Date</label>
+                      <input type="text" className="form-control" name="formDate" value={this.state.formDate} onChange={this.handleInput}/>
+                    </div>
+                    <div className="form-group col-sm-2 col-sm-offset-5">
                       <label htmlFor="time">Time</label>
-                      <input type="text" className="form-control" name="time" />
+                      <input type="text" className="form-control" name="formTime" value={this.state.formTime} onChange={this.handleInput}/>
                     </div>
-                    <div className="form-group">
+                    <div className="form-group col-sm-2 col-sm-offset-5">
                       <label htmlFor="seats">Number of Seats</label>
-                      <input type="text" className="form-control" name="seats" />
+                      <input type="text" className="form-control" name="formSeats" value={this.state.formSeats} onChange={this.handleInput}/>
                     </div>
+                  </div>
+                  <div className="row">
                     <div className="res-button">
-                      <button type="submit" className="btn btn-basic btn-res">Save!</button>
+                      <button type="submit" className="btn btn-basic btn-res" disabled={!(this.state.formDate && this.state.formTime && this.state.formSeats)} onClick={this.handleFormSubmit}>Save!</button>
                     </div>
                   </div>
                 </Modal>

@@ -6,8 +6,9 @@ hr {
 	margin-right: 15px;
 }
 
-.background {
+.reservation-background {
 	background-color: #efefef;
+	height: 700px;
 }
 
 .table-container {
@@ -21,8 +22,8 @@ hr {
 }
 
 .table {
-	margin-top: 30px;
-	padding: 0px 20px 20px 20px;
+	margin-top: 10px;
+	padding: 0px 20px 25px 20px;
 }
 
 .margin {
@@ -32,7 +33,7 @@ hr {
 
 .date {
 	font-weight: bold;
-	margin-left: 5px;
+	margin-left: 25px;
 	margin-top: 5px;
 	margin-bottom: 5px;
 	font-size: 20px;
@@ -40,6 +41,8 @@ hr {
 
 .date-section {
 	border-bottom: 1px solid #929293;
+	margin-left: 1px;
+	margin-right: 1px;
 }
 
 .res-list {
@@ -65,3 +68,39 @@ hr {
 	font-size: 22px;
 	margin-top: 51px;
 }
+
+.table-res-name {
+	font-size: 25px;
+	margin-top: 40px;
+}
+
+.table-res-time {
+	font-size: 25px;
+	margin-top: 40px;
+	text-align: center;
+}
+
+.table-res-seats {
+	font-size: 25px;
+	margin-top: 40px;
+	text-align: center;
+}
+
+.buttons {
+	margin-top: 15px;
+}
+
+.btn-edit {
+	background-color: #dc0000;
+	color: white;
+	width: 80px;
+	margin: 5px;
+}
+
+.btn-delete {
+	background-color: #dc0000;
+	color: white;
+	width: 80px;
+	margin: 5px;
+}
+

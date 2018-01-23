@@ -4,8 +4,6 @@ import Nav from "../../components/Nav";
 import Body from "../../components/HowItWorks";
 import Button from "../../components/Button";
 import Footer from "../../components/Footer";
-import API from "../../utils/API";
-import { Container, Row, Col } from "../../components/Grid";
 import "./Home.css";
 
 class Home extends Component {
@@ -16,13 +14,13 @@ class Home extends Component {
         <Jumbotron />
         <div className="background">
           <div className="home-margin">
-          <div class="container home-container">
-            <Row>
+          <div className="container home-container">
+            <div className="row">
                 <Body />
-            </Row>
-            <Row>
+            </div>
+            <div className="row">
                 <Button />
-            </Row>
+            </div>
           </div>
           </div>
         </div>

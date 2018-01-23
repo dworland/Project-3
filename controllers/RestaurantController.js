@@ -7,11 +7,12 @@ module.exports = {
       .then(dbModel => res.json(dbModel))
       .catch(err => res.status(422).json(err));
   },
-  // findByCuisine: function(req, res) {
-  //   var cuisineID = req.param.cuisine;
-  //   db.Book
-  //     .findByCuisine({cuisineID: })
-  //     .then(dbModel => res.json(dbModel))
-  //     .catch(err => res.status(422).json(err));
-  // }
+  findByCuisine: function(req, res) {
+    const cuisine = req.params.cuisine;
+
+    db.Restaurants
+      .find({ cuisine })
+      .then(dbModel => res.json(dbModel))
+      .catch(err => res.status(422).json(err));
+  }
 };

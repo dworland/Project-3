@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './Modal.css';
 
 class Modal extends React.Component {
   render() {
@@ -9,14 +10,16 @@ class Modal extends React.Component {
     }
 
     return (
-      <div className="modal">
-        {this.props.children}
-
-        <div className="footer">
-          <button onClick={ this.props.onClose }>Close</button>
+      <div className="Modal-modal">
+      <div className="modal-close-button row">
+        <div className="col-sm-1 col-sm-offset-11">
+          <button onClick={ this.props.onClose } className="close-btn">X</button>
         </div>
       </div>
-    );
+
+        {this.props.children}
+      </div>
+    ); 
   }
 }
 
