@@ -1,0 +1,21 @@
+.Edit-modal {
+	position: fixed;
+    top: 200px;
+    left: 300px;
+    width: 63%;
+    height: 55%;
+    background: #efefef;
+    opacity: 1;
+    z-index: 999;
+    border: 2px solid #929293;
+}
+
+.modal-close-button {
+	text-align: center;
+	height: 20px;
+}
+
+.close-btn {
+	background-color: #dc0000;
+	 color: white;
+}

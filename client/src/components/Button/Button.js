@@ -1,10 +1,10 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link, Switch } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./button.css";
 
 const Button = () => (
 <div className="getStarted">
-	<Link to="/SignIn">
+	<Link to="/Search">
   	<button type="button" class="btn get-started-btn">Get Started!</button>
   </Link>
 </div>

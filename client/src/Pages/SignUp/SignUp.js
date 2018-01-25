@@ -2,8 +2,6 @@ import React, { Component } from "react";
 import Nav from "../../components/Nav";
 import SignUpForm from "../../components/SignUpForm";
 import Footer from "../../components/Footer";
-import API from "../../utils/API";
-import { Container, Row, Col } from "../../components/Grid";
 import "./SignUp.css";
 
 class SignUp extends Component {

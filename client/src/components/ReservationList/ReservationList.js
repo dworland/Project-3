@@ -1,5 +1,4 @@
 import React from "react";
-import ReservationListItem from "./ReservationListItem"
 import "./ReservationList.css";
 
 export const ReservationList = ({ children }) => {

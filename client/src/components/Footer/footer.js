@@ -6,12 +6,6 @@ const Footer = () => (
     <div className="container footer-container">
       <div className="row">
         <h5 className="black-text footer-title">Bites ATX</h5>
-        <div className="social-links">
-          <img className="social" src="" />
-          <img className="social" src="" />
-          <img className="social" src="" />
-          <img className="social" src="" />
-        </div>
       </div>
       <div className="city-scape"></div>
     </div>

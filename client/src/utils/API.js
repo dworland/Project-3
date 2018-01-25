@@ -16,7 +16,11 @@ export default {
 
   // Gets the Reservation with the given id
   getReservationById: function(id) {
-    return axios.get("/api/reservations/" + id);
+    return axios.get(`/api/reservations/${id}`);
+  },
+
+  updateReservationById: function(id, data) {
+    return axios.put("/api/reservations/" + id, data);
   },
 
   // Deletes the Reservation with the given id

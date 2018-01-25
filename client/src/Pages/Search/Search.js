@@ -5,7 +5,6 @@ import Footer from "../../components/Footer";
 import Modal from "../../components/Modal";
 import API from "../../utils/API";
 import { List, ListItem } from "../../components/List";
-import PropTypes from 'prop-types';
 import "./Search.css";
 
 class Search extends Component {
@@ -50,7 +49,8 @@ class Search extends Component {
   toggleModal(restaurant) {
     this.setState({
       isOpen: !this.state.isOpen,
-      selectedRestaraunt: restaurant
+      selectedRestaraunt: restaurant,
+      message: ""
     });
   };
 
@@ -71,19 +71,9 @@ class Search extends Component {
         time: this.state.formTime,
         seats: this.state.formSeats
       })
-        .catch(err => console.log(err));
-    }
-  };
-
-  handleFormUpdate = event => {
-    event.preventDefault();
-    if (this.state.formDate && this.state.formTime && this.state.formSeats) {
-      API.saveReservation({
-        date: this.state.formDate,
-        name: this.state.selectedRestaraunt.name,
-        time: this.state.formTime,
-        seats: this.state.formSeats
-      })
+        .then(res => {
+          this.setState({ message: "You're reservation has been saved!" })
+        })
         .catch(err => console.log(err));
     }
   };
@@ -165,26 +155,33 @@ class Search extends Component {
                 )}
 
                 <Modal show={this.state.isOpen} className={this.state.isOpen ? "showPlease" : "hidePlease"} onClose={this.toggleModal}>
-                  <div className="row modal-restaurant-name">{this.state.selectedRestaraunt.name}</div>
-                  <div className="row">
-                    <div className="form-group col-sm-2 col-sm-offset-5">
-                      <label htmlFor="date">Date</label>
-                      <input type="text" className="form-control" name="formDate" value={this.state.formDate} onChange={this.handleInput}/>
+                  {this.state.message ? 
+                    <div className ="saved-message">{this.state.message}</div>
+                    :
+                    <div>
+                      <div className="row modal-restaurant-name">Set your reservation at:</div>
+                      <div className="row modal-restaurant-name"><strong>{this.state.selectedRestaraunt.name}</strong></div>
+                      <div className="row">
+                        <div className="form-group col-sm-2 col-sm-offset-5">
+                          <label htmlFor="date">Date</label>
+                          <input type="text" className="form-control" name="formDate" placeholder="m/dd/yy" value={this.state.formDate} onChange={this.handleInput}/>
+                        </div>
+                        <div className="form-group col-sm-2 col-sm-offset-5">
+                          <label htmlFor="time">Time</label>
+                          <input type="text" className="form-control" name="formTime" placeholder="ex: 5:00PM" value={this.state.formTime} onChange={this.handleInput}/>
+                        </div>
+                        <div className="form-group col-sm-2 col-sm-offset-5">
+                          <label htmlFor="seats">Number of Seats</label>
+                          <input type="text" className="form-control" name="formSeats" placeholder="ex: 5" value={this.state.formSeats} onChange={this.handleInput}/>
+                        </div>
+                      </div>
+                      <div className="row">
+                        <div className="res-button">
+                          <button type="submit" className="btn btn-basic btn-res" disabled={!(this.state.formDate && this.state.formTime && this.state.formSeats)} onClick={this.handleFormSubmit}>Save!</button>
+                        </div>
+                      </div>
                     </div>
-                    <div className="form-group col-sm-2 col-sm-offset-5">
-                      <label htmlFor="time">Time</label>
-                      <input type="text" className="form-control" name="formTime" value={this.state.formTime} onChange={this.handleInput}/>
-                    </div>
-                    <div className="form-group col-sm-2 col-sm-offset-5">
-                      <label htmlFor="seats">Number of Seats</label>
-                      <input type="text" className="form-control" name="formSeats" value={this.state.formSeats} onChange={this.handleInput}/>
-                    </div>
-                  </div>
-                  <div className="row">
-                    <div className="res-button">
-                      <button type="submit" className="btn btn-basic btn-res" disabled={!(this.state.formDate && this.state.formTime && this.state.formSeats)} onClick={this.handleFormSubmit}>Save!</button>
-                    </div>
-                  </div>
+                  }
                 </Modal>
 
               </div>
