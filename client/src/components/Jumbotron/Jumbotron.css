@@ -3,7 +3,7 @@
 	background-image: url("./mixed-appetizers.jpg");
   	height: 850px;
   	padding-top: 75px;
-  	margin-bottom: 0px;
+  	margin-bottom: 0px !important;
 }
 
 .jumbo-btn {
