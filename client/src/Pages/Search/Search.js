@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Nav from "../../components/Nav";
-import MapContainer from "../../components/MapContainer";
 import Footer from "../../components/Footer";
 import Modal from "../../components/Modal";
 import API from "../../utils/API";
@@ -93,43 +92,76 @@ class Search extends Component {
                 <div className="cuisines">
 
                   <div className="row">
-                    <div class="col-sm-1 col-sm-offset-1">
+                    <div class="col-sm-2 col-sm-offset-1">
                       <div onClick={ this.handleClick } className="italian" data-cuisine="italian"></div>
+                      <div className="label">
+                        <p className="label-text">Italian</p>
+                      </div>
                     </div>
-                    <div class="col-sm-1">
+                    <div class="col-sm-2">
                       <div onClick={ this.handleClick } className="seafood" data-cuisine="seafood"></div>
+                      <div className="label">
+                        <p className="label-text">Seafood</p>
+                      </div>
                     </div>
-                    <div class="col-sm-1">
+                    <div class="col-sm-2">
                       <div onClick={ this.handleClick } className="chinese" data-cuisine="chinese"></div>
+                      <div className="label">
+                        <p className="label-text">Chinese</p>
+                      </div>
                     </div>
-                    <div class="col-sm-1">
+                    <div class="col-sm-2">
                       <div onClick={ this.handleClick } className="american" data-cuisine="american"></div>
+                      <div className="label">
+                        <p className="label-text">American</p>
+                      </div>
                     </div>
-                    <div class="col-sm-1">
+                    <div class="col-sm-2">
                       <div onClick={ this.handleClick } className="sushi" data-cuisine="sushi"></div>
+                      <div className="label">
+                        <p className="label-text">Sushi</p>
+                      </div>
                     </div>
-                    <div class="col-sm-1">
+                  </div>
+                  <div className="row second-row">
+                    <div class="col-sm-2 col-sm-offset-1">
                       <div onClick={ this.handleClick } className="mexican" data-cuisine="mexican"></div>
+                      <div className="label">
+                        <p className="label-text">Mexican</p>
+                      </div>
                     </div>
-                    <div class="col-sm-1">
+                    <div class="col-sm-2">
                       <div onClick={ this.handleClick } className="noodles" data-cuisine="noodles"></div>
+                      <div className="label">
+                        <p className="label-text">Noodles</p>
+                      </div>
                     </div>
-                    <div class="col-sm-1">
+                    <div class="col-sm-2">
                       <div onClick={ this.handleClick } className="vegetarian" data-cuisine="vegan"></div>
+                      <div className="label">
+                        <p className="label-text">Vegan</p>
+                      </div>
                     </div>
-                    <div class="col-sm-1">
+                    <div class="col-sm-2">
                       <div onClick={ this.handleClick } className="indian" data-cuisine="indian"></div>
+                      <div className="label">
+                        <p className="label-text">Indian</p>
+                      </div>
                     </div>
-                    <div class="col-sm-1">
+                    <div class="col-sm-2">
                       <div onClick={ this.handleClick } className="breakfast" data-cuisine="breakfast"></div>
+                      <div className="label">
+                        <p className="label-text">Breakfast</p>
+                      </div>
                     </div>
                   </div>
 
                 </div>
               </div>
             </div>
+
             <div className="row main-row">
-              <div className="col-sm-3 list">
+              <div className="col-sm-6 col-sm-offset-3 list">
                 {this.state.restaurants.length ? (
                   <List>
                     {this.state.restaurants.map(restaurant => {
@@ -141,10 +173,10 @@ class Search extends Component {
                             </div>
                             <button onClick={() => this.toggleModal(restaurant)} className="make-res-button">Make Reservation</button>
                             <div className="row address" data-address={restaurant.address}>{restaurant.address}</div>
-                            <div className="row phone">{restaurant.phone}</div>
                             <div className="row">
-                              <div className="col-sm-4 col-sm-offset-4">{ "rating: " + restaurant.rating}</div>
-                              <div className="col-sm-4">{ "price: " + restaurant.price}</div>
+                            <div className="col-sm-5 phone">{restaurant.phone}</div>
+                              <div className="col-sm-2 col-sm-offset-2">{ "rating: " + restaurant.rating}</div>
+                              <div className="col-sm-2">{ "price: " + restaurant.price}</div>
                             </div>
                         </ListItem>
                       );
@@ -159,8 +191,9 @@ class Search extends Component {
                     <div className ="saved-message">{this.state.message}</div>
                     :
                     <div>
-                      <div className="row modal-restaurant-name">Set your reservation at:</div>
+                      <div className="row modal-set-reservation">Set your reservation at:</div>
                       <div className="row modal-restaurant-name"><strong>{this.state.selectedRestaraunt.name}</strong></div>
+                      <div className="row modal-restaurant-address">{this.state.selectedRestaraunt.address}</div>
                       <div className="row">
                         <div className="form-group col-sm-2 col-sm-offset-5">
                           <label htmlFor="date">Date</label>
@@ -184,9 +217,6 @@ class Search extends Component {
                   }
                 </Modal>
 
-              </div>
-              <div className="col-sm-9 map">
-              <MapContainer />
               </div>
             </div>
           </div>

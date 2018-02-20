@@ -1,13 +1,14 @@
 .Modal-modal {
 	position: fixed;
-    top: 400px;
-    left: 500px;
-    width: 63%;
-    height: 55%;
+    top: 250px;
+    left: 360px;
+    width: 55%;
+    height: 60%;
     background: white;
     opacity: 1;
     z-index: 999;
     border: 2px solid #929293;
+    border-radius: 5px;
 }
 
 .modal-close-button {
